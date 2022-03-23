@@ -1,6 +1,6 @@
-# BotDiscord
+### BotDiscord
 
-´npm install`
+`npm install`
 
-# DotEnv
+### DotEnv
 Criar .env com TOKEN=token
