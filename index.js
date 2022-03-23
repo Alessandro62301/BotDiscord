@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Client, Intents } = require('discord.js');
 
+const comandos = ["/help","/git",];
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -12,11 +13,19 @@ client.on('ready', () => {
 })
 
 client.on("message", (msg) => {
+
+    console.log(msg.author);
+
     if (msg.author.bot) return
     
+    // console.log((msg.content).substr(0, 1));
+    // console.log(msg.content);
+
+
     if(msg.content === '/git'){
         //msg.channel.send
-        msg.reply(`Comandos Git: 
+        msg.reply(`
+    Comandos Git: 
     Geral
     git help
 
@@ -59,15 +68,21 @@ client.on("message", (msg) => {
 
     Listar configurações
     git config --list
-        `);
+    `);
         
     }
 
     if(msg.content === '/help'){
         msg.reply(`Lista de Comandos:
+    /help
+    /git
 
         `);
     }
+
+    // else((msg.content).substr(0, 1) === '/'){
+    //     msg.reply('Comando Invalido');
+    // }
 });
 
 client.login(TOKEN);

@@ -3,4 +3,4 @@
 `npm install`
 
 ### DotEnv
-Criar .env com TOKEN=token
+Criar .env com TOKEN=`Token do bot`
